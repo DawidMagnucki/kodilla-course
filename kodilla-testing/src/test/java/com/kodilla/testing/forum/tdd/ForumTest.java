@@ -6,7 +6,7 @@ import com.kodilla.testing.forum.ForumUser;
 import org.junit.jupiter.api.*;
 
 @DisplayName("TDD: Forum Test Suite \uD83D\uDE31")
-public class ForumTestSuite {
+public class ForumTest {
 
     private static int testCounter = 0;
 
