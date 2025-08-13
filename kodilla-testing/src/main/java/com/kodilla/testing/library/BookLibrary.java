@@ -20,7 +20,7 @@ public class BookLibrary {
         return bookList;
     }
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-        return null;
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
     }
 
 }

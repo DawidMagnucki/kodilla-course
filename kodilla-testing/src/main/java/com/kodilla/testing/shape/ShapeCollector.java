@@ -6,21 +6,33 @@ import java.util.List;
 public class ShapeCollector {
     List<Shape> shapes = new ArrayList<>();
 
-
-    public String addFigure(Shape shape) {
-        return "test";
+    public void addFigure(Shape shape) {
+        shapes.add(shape);
     }
 
-    public void removeFigure(Shape shape) {
-        System.out.println("test");
+    public Shape getFigure(int index) {
+        return shapes.get(index);
     }
 
-    public Shape getFigure(int n) {
-        return shapes.get(n);
+    public void removeFigure(int index) {
+        shapes.remove(index);
     }
 
-    public String showFigures() {
-        return "test";
-    }
+//
+//    public String addFigure(Shape shape) {
+//        return "test";
+//    }
+//
+//    public void removeFigure(Shape shape) {
+//        System.out.println("test");
+//    }
+//
+//    public Shape getFigure(int n) {
+//        return shapes.get(n);
+//    }
+//
+//    public String showFigures() {
+//        return "test";
+//    }
 
 }
