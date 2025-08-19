@@ -1,19 +1,21 @@
 plugins {
-    id 'java'
+    id("java")
 }
 
-group = 'com.kodilla'
-version = 'unspecified'
+group = "com.kodilla"
+version = "unspecified"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation(platform("org.junit:junit-bom:5.13.4"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.18.0")
 }
 
-test {
+tasks.test {
     useJUnitPlatform()
 }
