@@ -18,6 +18,8 @@ public final class People {
         theList.add("Khloe Fry");
         theList.add("Martin Valenzuela");
 
-        return new ArrayList<>(theList); //TODO: Jeżeli mam final theList oraz jej kopie ArrayList<>(theList), to skad kompilator bedzie wiedzial, do ktorej listy sie odwoluje?
+        return new ArrayList<>(theList);
     }
 }
+
+

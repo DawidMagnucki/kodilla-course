@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class ForumStatisticsSuiteTest {     //TODO: Poczatkowo nazwalem klase ForumStatisticsTestSuite, ale wyskoczyl mi warning ze tak ich nie nazywamy, bo musi sie konczyc na test. Czy rzeczywiscie tak jest?
+public class ForumStatisticsSuiteTest {
 
     @Mock
     private Statistics statisticsMock;
@@ -84,7 +84,7 @@ public class ForumStatisticsSuiteTest {     //TODO: Poczatkowo nazwalem klase Fo
         assertEquals(15, forumStatistics.getUsersCount());
         assertEquals(10, forumStatistics.getPostsCount());
         assertEquals(0, forumStatistics.getCommentsCount());
-        assertEquals(0.6666666666666666, forumStatistics.getAvgPostsPerUser()); //TODO: Czy jest jakis zapis, ktorym zgrabniej mozemy sobie z tym poradzic?
+        assertEquals(0.66, forumStatistics.getAvgPostsPerUser(), 0.01);
         assertEquals(0, forumStatistics.getAvgCommentsPerUser());
         assertEquals(0, forumStatistics.getAvgCommentsPerPost());
     }
@@ -132,7 +132,7 @@ public class ForumStatisticsSuiteTest {     //TODO: Poczatkowo nazwalem klase Fo
         //Given
         when(statisticsMock.usersNames()).thenReturn(generateListOfUsers(0));
         when(statisticsMock.postsCount()).thenReturn(50);
-        when(statisticsMock.commentsCount()).thenReturn(100); //TODO: Czy w postCount i commentsCount moze byc jakas liczba skoro nie ma Usera? Test przeszedl, mimo, ze metoda jasno podaje, ze jezeli user jest 0 to posts i comments tez maja byc 0
+        when(statisticsMock.commentsCount()).thenReturn(100);
 
         //When
         forumStatistics.calculateAdvStatistics(statisticsMock);

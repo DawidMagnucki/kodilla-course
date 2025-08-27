@@ -15,7 +15,7 @@ public class ForumStatistics {
         commentsCount = statistics.commentsCount();
 
         if (usersCount > 0) {
-            avgPostsPerUser = (double) postsCount / usersCount; //TODO: Rozumiem, ze robie tutaj rzutowanie, bo pola klasu zawsze beda liczba calkowita, np. nie moge przekazac 0.5 usera, natomiast wynik sredniej juz moze byc liczba dziesietna, czy tak?
+            avgPostsPerUser = (double) postsCount / usersCount;
             avgCommentsPerUser = (double) commentsCount / usersCount;
         } else {
             avgPostsPerUser = 0;
