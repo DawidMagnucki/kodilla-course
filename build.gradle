@@ -1,5 +1,23 @@
-allprojects {
-    repositories {
-        mavenCentral()
-    }
+plugins {
+    id 'java'
+}
+
+group = 'com.kodilla'
+version = '0.0.1 - SNAPSHOT'
+
+java {
+    sourceCompatibility = '21'
+}
+
+repositories {
+    mavenCentral()
+    maven {url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
 }
