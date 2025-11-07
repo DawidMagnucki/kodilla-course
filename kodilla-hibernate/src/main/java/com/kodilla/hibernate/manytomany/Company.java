@@ -6,7 +6,11 @@ import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@NamedNativeQuery(
+        name = "Company.findByFirstThreeCharacters",
+        query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :THREECHARACTERS",
+        resultClass = Company.class
+)
 @Entity
 @Table(name = "COMPANIES")
 @Access(AccessType.PROPERTY)
