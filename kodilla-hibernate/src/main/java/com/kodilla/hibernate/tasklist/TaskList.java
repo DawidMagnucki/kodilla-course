@@ -1,5 +1,6 @@
-package com.kodilla.hibernate.task;
+package com.kodilla.hibernate.tasklist;
 
+import com.kodilla.hibernate.task.Task;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
