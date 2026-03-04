@@ -57,7 +57,7 @@ public class StoredProcTestSuite {
         if (rs.next()) {
             bestsellerCount = rs.getInt("HOW_MANY");
         }
-        System.out.println("Number of bestsellers: " + bestsellerCount);
+
         assertTrue(bestsellerCount >= 0);
         rs.close();
         statement.close();
