@@ -70,12 +70,6 @@ public class CrudAppTestSuite {
         Thread.sleep(2000);
     }
 
-    @Test
-    public void shouldCreateTrelloCard() throws InterruptedException {
-        String taskName = createCrudAppTestTask();
-        deleteTaskFromCrudApp(taskName);
-    }
-
     private void sendTestTaskToTrello(String taskName) throws InterruptedException {
         driver.navigate().refresh();
 
@@ -99,12 +93,6 @@ public class CrudAppTestSuite {
         Thread.sleep(5000);
     }
 
-    @Test
-    public void shouldCreateTrelloCardAndSendItToTrello() throws InterruptedException {
-        String taskName = createCrudAppTestTask();
-        sendTestTaskToTrello(taskName);
-
-    }
 
     private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException {
         final String TRELLO_URL = "https://trello.com/login";
@@ -138,11 +126,19 @@ public class CrudAppTestSuite {
         return result;
      }
 
-     @Test
-     public void shouldCreateTrelloCardAndSendItToTrelloAndCheckIfExists() throws InterruptedException {
-         String taskName = createCrudAppTestTask();
-         sendTestTaskToTrello(taskName);
-         assertTrue(checkTaskExistsInTrello(taskName));
-     }
+    @Test
+    public void shouldCreateTrelloCardAndSendItToTrelloAndCheckIfExists() throws InterruptedException {
+        //Given
+        String taskName = createCrudAppTestTask();
+
+        //When
+        sendTestTaskToTrello(taskName);
+
+        //Then
+        assertTrue(checkTaskExistsInTrello(taskName));
+
+        //CleanUp
+        deleteTaskFromCrudApp(taskName);
+    }
 
 }
